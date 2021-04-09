@@ -10,7 +10,8 @@ public class PowerUp : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.down * _floatingSpeed * Time.deltaTime);
-        if (transform.position.y < -8.2f)
+        transform.Rotate(Vector3.down * 30f * Time.deltaTime);
+        if (transform.position.y < -8.6f)
         {
             Destroy(this.gameObject);
         }
@@ -44,6 +45,22 @@ public class PowerUp : MonoBehaviour
             else if (this.CompareTag("ExtraSpeed"))
             {
                 other.GetComponent<Player>().ActivateExtraSpeed();
+            }
+            else if (this.CompareTag("Glowstick"))
+            {
+                other.GetComponent<Player>().ActivateGlowstick();
+            }
+            else if (this.CompareTag("Slow"))
+            {
+                other.GetComponent<Player>().ActivateSnailMode();
+            }
+            else if (this.CompareTag("MinusPoints"))
+            {
+                other.GetComponent<Player>().RelayScore(-2);
+            }
+            else if (this.CompareTag("LocalShield"))
+            {
+                other.GetComponent<Player>().GetLocalShield();
             }
             Destroy(this.gameObject);
         }

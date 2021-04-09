@@ -1,12 +1,12 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8152352455407788454
+--- !u!114 &6701703797418328465
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 291537850605997872}
+  m_GameObject: {fileID: 5630418149052551666}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4884932afea880e40b24d2c85e1f738b, type: 3}
@@ -16,13 +16,18 @@ MonoBehaviour:
   _glassShredsPrefab: {fileID: 1773268514781119631, guid: 7d7e2b338dc794746aaf290f37b7d800,
     type: 3}
   _glassAmount: 3
---- !u!1001 &9074920534409527563
+--- !u!1001 &4023996494677008329
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5094062158244997416, guid: 0d2945f1d413a8e4188cd211a2c4b120,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5094062158244997416, guid: 0d2945f1d413a8e4188cd211a2c4b120,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -96,9 +101,84 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 843868591065354442, guid: 0d2945f1d413a8e4188cd211a2c4b120, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0d2945f1d413a8e4188cd211a2c4b120, type: 3}
---- !u!1 &291537850605997872 stripped
+--- !u!1 &5630418149052551666 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8789715873114050107, guid: 0d2945f1d413a8e4188cd211a2c4b120,
     type: 3}
-  m_PrefabInstance: {fileID: 9074920534409527563}
+  m_PrefabInstance: {fileID: 4023996494677008329}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &5208157239576039786 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9196082260224036515, guid: 0d2945f1d413a8e4188cd211a2c4b120,
+    type: 3}
+  m_PrefabInstance: {fileID: 4023996494677008329}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5343665375968434179
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5208157239576039786}
+    m_Modifications:
+    - target: {fileID: 3308353670781956143, guid: d44aabe5fbd258d4ebdb1cdaafa6b4dc,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308353670781956143, guid: d44aabe5fbd258d4ebdb1cdaafa6b4dc,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308353670781956143, guid: d44aabe5fbd258d4ebdb1cdaafa6b4dc,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308353670781956143, guid: d44aabe5fbd258d4ebdb1cdaafa6b4dc,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308353670781956143, guid: d44aabe5fbd258d4ebdb1cdaafa6b4dc,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308353670781956143, guid: d44aabe5fbd258d4ebdb1cdaafa6b4dc,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308353670781956143, guid: d44aabe5fbd258d4ebdb1cdaafa6b4dc,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308353670781956143, guid: d44aabe5fbd258d4ebdb1cdaafa6b4dc,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308353670781956143, guid: d44aabe5fbd258d4ebdb1cdaafa6b4dc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308353670781956143, guid: d44aabe5fbd258d4ebdb1cdaafa6b4dc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308353670781956143, guid: d44aabe5fbd258d4ebdb1cdaafa6b4dc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308353670782315535, guid: d44aabe5fbd258d4ebdb1cdaafa6b4dc,
+        type: 3}
+      propertyPath: m_Name
+      value: Gaz_Bottle_01
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d44aabe5fbd258d4ebdb1cdaafa6b4dc, type: 3}

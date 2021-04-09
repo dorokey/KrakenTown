@@ -6,12 +6,13 @@ using Random = UnityEngine.Random;
 
 public class OldBoots : MonoBehaviour
 {
-    [SerializeField] private float _speed = 8f;
+    [SerializeField] private float _speed = 6f;
     [SerializeField] private GameObject _algaeShotPrefab;
 
     void Update()
     {
         transform.Translate(Vector3.down * _speed * Time.deltaTime);
+        //transform.Rotate(new Vector3(4f * Time.deltaTime, 10f * Time.deltaTime, 0f), Space.Self); 
         if ( (transform.position.y <= 38f && transform.position.y >= 37.95f) && name.Contains("OldBoots2"))
         {
             Instantiate(_algaeShotPrefab, transform.position, Quaternion.identity);

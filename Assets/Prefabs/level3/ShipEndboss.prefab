@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 673440094872966773}
   m_Layer: 0
   m_Name: ShipEndboss
-  m_TagString: Untagged
+  m_TagString: Endboss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,3 +133,4 @@ MonoBehaviour:
   _xkoo: 0
   _stillAlive: 5
   _delay: 1
+  _defeat: 0

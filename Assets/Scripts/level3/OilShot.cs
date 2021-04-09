@@ -35,8 +35,7 @@ public class OilShot : MonoBehaviour
         }
         else if (other.CompareTag("Player"))
         {
-            other.GetComponent<Player>().DamageShreds();
-            other.GetComponent<Player>().DamageShreds();
+            other.GetComponent<Player>().DamageOilandAlgae();
             Destroy(this.gameObject);
         }
         else if (other.CompareTag("Ink") || other.CompareTag("SuperInk") || other.CompareTag("Shield"))

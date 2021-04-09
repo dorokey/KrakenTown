@@ -16,8 +16,8 @@ public class GlassBottleScript : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.down * _floatingSpeed * Time.deltaTime);
-        //transform.Rotate(Vector3.down * 200f * Time.deltaTime);
-        if (transform.position.y < -8.2f)
+        transform.Rotate(Vector3.down * 100f * Time.deltaTime);
+        if (transform.position.y < -8.6f)
         {
             transform.position = new Vector3(Random.Range(-9f, 9f), 15.4f, 0);
         }

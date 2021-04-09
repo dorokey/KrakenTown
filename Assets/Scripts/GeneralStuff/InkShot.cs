@@ -6,7 +6,7 @@ using UnityEngine;
 public class InkShot : MonoBehaviour
 {
     [SerializeField] private float _inkSpeed = 6f;
-    private Vector3 scaleChange = new Vector3(0.01f, 0.01f, 0.01f);
+    private Vector3 scaleChange = new Vector3(0.005f, 0.005f, 0.005f);
     void Update()
     {
         if (name.Contains("SuperInk"))

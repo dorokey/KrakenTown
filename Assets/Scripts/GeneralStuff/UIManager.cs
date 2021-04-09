@@ -15,10 +15,15 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _winText;
     [SerializeField] private TextMeshProUGUI _lostText;
     [SerializeField] private TextMeshProUGUI _numberOfKeys;
+    [SerializeField] private TextMeshProUGUI _showtime;
+    [SerializeField] private TextMeshProUGUI _endScore;
+
+    
     
     public int _score = 0;
+    public float _time;
     private float _lives = 3f;
-    private float _shipAlive = 10f;
+    private float _shipAlive = 5f;
     public int _keysFound = 0;
 
     private void Start()
@@ -29,6 +34,8 @@ public class UIManager : MonoBehaviour
         _winText.gameObject.SetActive(false);
         _lostText.gameObject.SetActive(false);
         _missingKeys.gameObject.SetActive(false);
+        _showtime.gameObject.SetActive(false);
+        _endScore.gameObject.SetActive(false);
         _shipLivesText.text = "Ship Lives: " + _shipAlive;
     }
 
@@ -82,6 +89,24 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
         _missingKeys.gameObject.SetActive(false);
     }
+    
+    public float GetTime(float _playerTime)
+    {
+        _time = _playerTime;
+        return _time;
+    }
 
+    public void ShowTime()
+    {
+        _showtime.text = "You lasted: " + _time + " seconds";
+        _showtime.gameObject.SetActive(true);
+    }
+    
+    
+    public void EndScore()
+    {
+        _endScore.text = "Your score: " + _score;
+        _endScore.gameObject.SetActive(true);
+    }
 
 }

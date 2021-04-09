@@ -9,7 +9,7 @@ public class Tsunami : MonoBehaviour
     void Update()
     {
         transform.localScale += scaleChange;
-        if (transform.localScale.x > 12f)
+        if (transform.localScale.x > 9f)
         {
             Destroy(this.gameObject);
         }

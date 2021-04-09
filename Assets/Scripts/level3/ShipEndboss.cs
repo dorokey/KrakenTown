@@ -12,8 +12,8 @@ public class ShipEndboss : MonoBehaviour
     [SerializeField] private GameObject _motoroilPrefab;
     [SerializeField] private UIManager _uiManager;
     [SerializeField] private float _xkoo = 0f;
-    [SerializeField] public float _stillAlive = 10f;
-    [SerializeField] private float _delay = 0.2f;
+    [SerializeField] public float _stillAlive = 5f;
+    [SerializeField] private float _delay = 0.6f;
     public bool _defeat = false;
 
 
@@ -80,12 +80,12 @@ public class ShipEndboss : MonoBehaviour
 
     private void EndbossDamage()
     {
-        _stillAlive -= 0.25f;
+        _stillAlive -= 0.2f;
         if (_stillAlive <= 0f)
         {
             _defeat = true;
         }
-        _uiManager.EndbossDemise(0.25f);
+        _uiManager.EndbossDemise(0.2f);
     }
 
     public bool EndbossAlive()

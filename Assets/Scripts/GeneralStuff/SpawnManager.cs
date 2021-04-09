@@ -7,19 +7,21 @@ using Random = UnityEngine.Random;
 public class SpawnManager : MonoBehaviour
 {
 
-    [SerializeField] private float _delay = 1f;
+    [SerializeField] private float _delay = 5f;
     [SerializeField] private float _jellyfishBirth = 3f;
     [SerializeField] private List<GameObject> _bottlePrefabs;
     [SerializeField] private List<GameObject> _powerUpPrefabs;
+    [SerializeField] private List<GameObject> _powerUp2Prefabs;
     [SerializeField] private List<GameObject> _oldBootPrefabs;
     [SerializeField] private GameObject _jellyfishPrefabRight;
     [SerializeField] private GameObject _jellyfishPrefabLeft;
     [SerializeField] private GameObject _keyPrefab;
     [SerializeField] private GameObject _drachmenPrefab;
-    [SerializeField] private float _keyDelay = 20f;
-    [SerializeField] private float _bootsDelay = 1f;
+    [SerializeField] private float _keyDelay = 30f;
+    [SerializeField] private float _bootsDelay = 2f;
     [SerializeField] private float _powUpDelay = 10f;
     [SerializeField] private float _drachmenDelay = 6f;
+    [SerializeField] private float _powUpSlowDelay = 40f;
     public int _levelUp = 1;
     private bool _spawningOn = true;
     private bool _levelOne = true;
@@ -31,14 +33,16 @@ public class SpawnManager : MonoBehaviour
         StartCoroutine(JellyfishSpawn());
         StartCoroutine(KeySpawnL1());
         StartCoroutine(PowerUpsGo(13.8f));
+        StartCoroutine(PowerUpsGoSlow(13.8f));
         StartCoroutine(DrachmenSpawnL1());
 
         //stiefel level 2
         //StartCoroutine(JellyfishSpawn2());
         //StartCoroutine(KeySpawnL2());
         //StartCoroutine(DrachmenSpawnL2());
-        StartCoroutine(PowerUpsGo(42.3f));
         //StartCoroutine(OldBoots());
+        StartCoroutine(PowerUpsGo(42.3f));
+        StartCoroutine(PowerUpsGoSlow(42.3f));
         
         //level 3
         //StartCoroutine(KeySpawnL3());
@@ -46,6 +50,7 @@ public class SpawnManager : MonoBehaviour
         //StartCoroutine(JellyfishSpawn4());
         //StartCoroutine(DrachmenSpawnL3());
         StartCoroutine(PowerUpsGo(80.1f));
+        StartCoroutine(PowerUpsGoSlow(80.1f));
 
     }
     
@@ -132,7 +137,7 @@ public class SpawnManager : MonoBehaviour
         while (_spawningOn && _levelOne)
         {
             Instantiate(_keyPrefab,new Vector3(Random.Range(-9f,9f), 15.4f,0f), Quaternion.identity, this.transform);
-            _keyDelay = Random.Range(5f, 25f);
+            _keyDelay = Random.Range(20f, 35f);
             yield return new WaitForSeconds(_keyDelay);
         }
     }
@@ -141,7 +146,7 @@ public class SpawnManager : MonoBehaviour
         while (_spawningOn && _levelTwo)
         {
             Instantiate(_keyPrefab,new Vector3(Random.Range(-9f,9f), 43f,0f), Quaternion.identity, this.transform);
-            _keyDelay = Random.Range(5f, 25f);
+            _keyDelay = Random.Range(20f, 35f);
             yield return new WaitForSeconds(_keyDelay);
         }
     } 
@@ -150,7 +155,7 @@ public class SpawnManager : MonoBehaviour
         while (_spawningOn)
         {
             Instantiate(_keyPrefab,new Vector3(Random.Range(-9f,9f), 80f,0f), Quaternion.identity, this.transform);
-            _keyDelay = Random.Range(5f, 25f);
+            _keyDelay = Random.Range(20f, 35f);
             yield return new WaitForSeconds(_keyDelay);
         }
     }
@@ -162,6 +167,14 @@ public class SpawnManager : MonoBehaviour
         {
             Instantiate(_powerUpPrefabs[Random.Range(0,_powerUpPrefabs.Count)],new Vector3(Random.Range(-9f,9f), border, 0f), Quaternion.identity, this.transform);
             yield return new WaitForSeconds(_powUpDelay);
+        }
+    }
+    IEnumerator PowerUpsGoSlow(float border)
+    {
+        while (_spawningOn)
+        {
+            Instantiate(_powerUp2Prefabs[Random.Range(0,_powerUp2Prefabs.Count)],new Vector3(Random.Range(-9f,9f), border, 0f), Quaternion.identity, this.transform);
+            yield return new WaitForSeconds(_powUpSlowDelay);
         }
     }
     

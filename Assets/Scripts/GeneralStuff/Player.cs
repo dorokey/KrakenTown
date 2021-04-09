@@ -18,12 +18,17 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject _endbossPrefab;
     [SerializeField] private GameObject _tsunamiPrefab;
     [SerializeField] private GameObject _shockWavePrefab;
+    [SerializeField] private GameObject _glowstickPrefab;
     [SerializeField] private UIManager _uiManager;
+    [SerializeField] private GameObject _localShieldPrefab;
     [SerializeField] private int _level = 1;
     [SerializeField] public bool _keyFound = false;
     [SerializeField] public int _keyNumber = 0;
     [SerializeField] private bool _superInk = false;
     [SerializeField] private float _powerupTimeout = 5f;
+    [SerializeField] private bool _glowStickActive = false;
+
+    public float _timed;
     
 
     void Start()
@@ -40,6 +45,7 @@ public class Player : MonoBehaviour
         Inking();
         CheckAllKeys();
         CheckVictory();
+        _timed = Time.realtimeSinceStartup;
     }
 
     void PlayerMovement()
@@ -174,6 +180,42 @@ public class Player : MonoBehaviour
         _uiManager.ChangeLives(-1f);
         if ( _lives <= 0f )
         {
+            _uiManager.GetTime(_timed);
+            _uiManager.ShowTime(); //hier
+            _uiManager.EndScore();
+            _uiManager.YouLost();
+            _spawnManager.OnPlayerDeath();
+            Destroy(this.gameObject);
+            Destroy(_spawnManager.gameObject);
+            Destroy(_endbossPrefab.gameObject);
+        }
+    }
+    public void DamageShreds()
+    {
+        _lives -= 0.25f;
+        _uiManager.ChangeLives(-0.25f);
+        if ( _lives <= 0f )
+        {
+            _uiManager.GetTime(_timed);
+            _uiManager.ShowTime(); //hier
+            _uiManager.EndScore();
+            _uiManager.YouLost();
+            _spawnManager.OnPlayerDeath();
+            Destroy(this.gameObject);
+            Destroy(_uiManager.gameObject);
+            Destroy(_spawnManager.gameObject);
+            Destroy(_endbossPrefab.gameObject);
+        }
+    }
+    public void DamageOilandAlgae()
+    {
+        _lives -= 0.5f;
+        _uiManager.ChangeLives(-0.5f);
+        if ( _lives <= 0f )
+        {
+            _uiManager.GetTime(_timed);
+            _uiManager.ShowTime(); //hier
+            _uiManager.EndScore();
             _uiManager.YouLost();
             _spawnManager.OnPlayerDeath();
             Destroy(this.gameObject);
@@ -186,6 +228,9 @@ public class Player : MonoBehaviour
     {
         if (GameObject.FindWithTag("Endboss").GetComponent<ShipEndboss>().EndbossAlive())
         {
+            _uiManager.GetTime(_timed);
+            _uiManager.ShowTime(); //hier
+            _uiManager.EndScore();
             _uiManager.YouWon();
             _spawnManager.OnPlayerDeath();
             Destroy(this.gameObject);
@@ -200,21 +245,6 @@ public class Player : MonoBehaviour
         _uiManager.ChangeLives(1f);
     }
 
-    public void DamageShreds()
-    {
-        _lives -= 0.25f;
-        _uiManager.ChangeLives(-0.25f);
-        if ( _lives <= 0f )
-        {
-            _uiManager.YouLost();
-            _spawnManager.OnPlayerDeath();
-            Destroy(this.gameObject);
-            Destroy(_uiManager.gameObject);
-            Destroy(_spawnManager.gameObject);
-            Destroy(_endbossPrefab.gameObject);
-        }
-    }
-
     void Inking()
     {
         if (Input.GetKeyDown(KeyCode.Space) && Time.time > _canInk)
@@ -223,6 +253,10 @@ public class Player : MonoBehaviour
             if (_superInk)
             {
                 Instantiate(_superInkPrefab, transform.position + new Vector3(x: 0f, 0.74f, 0f), Quaternion.identity);
+            }
+            else if (_glowStickActive)
+            {
+                Instantiate(_glowstickPrefab, transform.position + new Vector3(x: 0f, 0.74f, 0f), Quaternion.identity);
             }
             else
             {
@@ -250,7 +284,7 @@ public class Player : MonoBehaviour
             _keyFound = true;
     }
 
-    public void ActivatePowerUp()
+    public void ActivatePowerUp() 
     {
         _superInk = true;
         StartCoroutine(DeactivatePowerup());
@@ -260,6 +294,18 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(_powerupTimeout);
         _superInk = false;
+    }
+
+    public void ActivateGlowstick()
+    {
+        _glowStickActive = true;
+        StartCoroutine(DeactivateGlowstick());
+    }
+
+    IEnumerator DeactivateGlowstick()
+    {
+        yield return new WaitForSeconds(5f);
+        _glowStickActive = false;
     }
 
     public void ActivateShield()
@@ -292,6 +338,7 @@ public class Player : MonoBehaviour
         {
             Instantiate(_shockWavePrefab, new Vector3(0f,45f,0f), Quaternion.identity);
         }
+        ShootSlower();
     }
 
     public void ActivateExtraSpeed()
@@ -304,6 +351,35 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
         _speed = 8f;
+    }
+
+    public void ActivateSnailMode()
+    {
+        _speed = 4f;
+        StartCoroutine(DeactivateSnailMode());
+    }
+
+    IEnumerator DeactivateSnailMode()
+    {
+        yield return new WaitForSeconds(8f);
+        _speed = 8f;
+    }
+
+    public void GetLocalShield()
+    {
+        Instantiate(_localShieldPrefab, transform.position + new Vector3(x: 0f, 0.74f, 0f), Quaternion.Euler(0f,90f,0f));
+    }
+
+    public void ShootSlower()
+    {
+        _inkRate = 2f;
+        StartCoroutine(DeactivateShootSlower());
+    }
+
+    IEnumerator DeactivateShootSlower()
+    {
+        yield return new WaitForSeconds(10f);
+        _inkRate = 0.3f;
     }
     
 }

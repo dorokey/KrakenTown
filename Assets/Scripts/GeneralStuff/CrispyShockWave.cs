@@ -17,10 +17,9 @@ public class CrispyShockWave : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        else if (other.CompareTag("Bottle") || other.CompareTag("EvilShot"))
-        {
-            if(!name.Contains("BottleGlass") && !name.Contains("OldBoots"))
-                Destroy(other.gameObject);
+        else if (other.CompareTag("Bottle"))
+        { 
+            Destroy(other.gameObject);
         }
     }
 }
