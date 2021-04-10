@@ -42,7 +42,9 @@ All in all, thank you for your attention :)
 Some other very short videos to sum things up visually haha:
 shockwave:
 https://github.com/dorokey/KrakenTown/blob/finalCommit/KrakenTown%20shockwave.mp4 
+
 rotating glow stick barrier:
 https://github.com/dorokey/KrakenTown/blob/finalCommit/rotating%20glow%20stick%20barrier.mp4 
+
 ship and end of level 2: 
 https://github.com/dorokey/KrakenTown/blob/finalCommit/KrakenTown%20end%20of%20level%202%20%2B%20ship.mp4 
