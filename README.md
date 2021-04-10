@@ -34,6 +34,9 @@ pretty cool to rotate the Sticks more like throwing stars. Also, a next level th
 not just as seperating barriers but as things the player isn't allowed to get to close to. That would make the game not just a shooting game but also make it necessary to do
 some fun manouvering.
 
-I have also added the video to this repository and its here: https://github.com/dorokey/KrakenTown/blob/finalCommit/KrakenTown%20gameplay%20%2B%20short%20explanation.mp4
+I have also added the gameplay video with explanation to this repository and its here:
+https://github.com/dorokey/KrakenTown/blob/finalCommit/KrakenTown%20gameplay%20%2B%20short%20explanation.mp4
+And I have another very short video to give an impression of level two briefly and the ship at the end: 
+https://github.com/dorokey/KrakenTown/blob/finalCommit/KrakenTown%20end%20of%20level%202%20%2B%20ship.mp4
 
 All in all, thank you for your attention :) 
