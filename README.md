@@ -40,6 +40,7 @@ https://github.com/dorokey/KrakenTown/blob/finalCommit/KrakenTown%20gameplay%20%
 All in all, thank you for your attention :) 
 
 Some other very short videos to sum things up visually haha:
+
 shockwave:
 https://github.com/dorokey/KrakenTown/blob/finalCommit/KrakenTown%20shockwave.mp4 
 
