@@ -36,7 +36,13 @@ some fun manouvering.
 
 I have also added the gameplay video with explanation to this repository and its here:
 https://github.com/dorokey/KrakenTown/blob/finalCommit/KrakenTown%20gameplay%20%2B%20short%20explanation.mp4
-And I have another very short video to give an impression of level two briefly and the ship at the end: 
-https://github.com/dorokey/KrakenTown/blob/finalCommit/KrakenTown%20end%20of%20level%202%20%2B%20ship.mp4
 
 All in all, thank you for your attention :) 
+
+Some other very short videos to sum things up visually haha:
+shockwave:
+https://github.com/dorokey/KrakenTown/blob/finalCommit/KrakenTown%20shockwave.mp4 
+rotating glow stick barrier:
+https://github.com/dorokey/KrakenTown/blob/finalCommit/rotating%20glow%20stick%20barrier.mp4 
+ship and end of level 2: 
+https://github.com/dorokey/KrakenTown/blob/finalCommit/KrakenTown%20end%20of%20level%202%20%2B%20ship.mp4 
